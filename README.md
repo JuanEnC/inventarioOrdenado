@@ -88,7 +88,7 @@ Una aplicación web para gestionar productos en inventario con **ordenamiento au
 ## 👤 Autor
 
 **JuanEnC**
-🔗 [Repositorio en GitHub](https://github.com/JuanEnC/inventarioOrdenado) ([GitHub][1])
+🔗 [Repositorio en GitHub](https://github.com/JuanEnC/inventarioOrdenado)
 
 ---
 
