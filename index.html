@@ -19,7 +19,9 @@
         <button type="button" id="btnFind">Buscar</button>
         <button type="button" id="btnDel">Eliminar</button>
         <button type="button" id="btnList">Listar</button>
+        <button type="button" id="btnListIvert">Listar Inverso</button>
         <button type="button" id="btnExtPr">Extraer Primero</button>
+        <button type="button" id="btnExtLast">Extraer Ultimo</button>
 
         <button type="reset">Cancelar</button>
       </form>
@@ -46,6 +48,13 @@
         let msg = document.getElementById("detalles");
         msg.innerHTML += "<h3>Listado</h3>";
         msg.innerHTML += miInv.listarHtml();
+      });
+
+      const btnListIvert = document.getElementById("btnListIvert");
+      btnListIvert.addEventListener("click", () => {
+        let msg = document.getElementById("detalles");
+        msg.innerHTML += "<h3>Listado</h3>";
+        msg.innerHTML += miInv.listarInvertHtml();
       });
 
       const btnDel = document.getElementById("btnDel");
@@ -77,6 +86,18 @@
         
         msg.innerHTML += "<h3>Extraer primer producto" + "</h3>";
         let bProducto = miInv.extraerPrimero();
+        document.getElementById("txtCod").value = bProducto.id;
+        document.getElementById("txtNom").value = bProducto.nombre;
+        document.getElementById("txtPre").value = bProducto.precio;
+        document.getElementById("txtCan").value = bProducto.cantidad;
+      });
+
+      const btnExtLast = document.getElementById("btnExtLast");
+      btnExtLast.addEventListener("click", () => {
+        let msg = document.getElementById("detalles");
+        
+        msg.innerHTML += "<h3>Extraer Ultimo producto" + "</h3>";
+        let bProducto = miInv.extraerUltimo();
         document.getElementById("txtCod").value = bProducto.id;
         document.getElementById("txtNom").value = bProducto.nombre;
         document.getElementById("txtPre").value = bProducto.precio;

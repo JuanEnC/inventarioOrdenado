@@ -57,6 +57,13 @@ class Inventario {
     return primero;
   }
 
+  extraerUltimo(){
+    if(this.inventario.length === 0) return null;
+    const ult = this.inventario[this.inventario.length-1];
+    this.inventario.pop();
+    return ult;
+  }
+
   listar(){
     let s = "";
     for(let i = 0; i < this.inventario.length; i++) s += this.inventario[i].info();
@@ -68,4 +75,13 @@ class Inventario {
     for(let i = 0; i < this.inventario.length; i++) s += this.inventario[i].infoHtml();
     return s;
   }
+
+  listarInvertHtml() {
+  let s = "";
+  for (let i = this.inventario.length - 1; i >= 0; i--) {
+    s += this.inventario[i].infoHtml();
+  }
+  return s;
+}
+
 }
